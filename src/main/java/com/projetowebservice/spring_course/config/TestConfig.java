@@ -8,9 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.projetowebservice.spring_course.entities.Category;
 import com.projetowebservice.spring_course.entities.Order;
 import com.projetowebservice.spring_course.entities.User;
 import com.projetowebservice.spring_course.entities.enums.OrderStatus;
+import com.projetowebservice.spring_course.repositories.CategoryRepository;
 import com.projetowebservice.spring_course.repositories.OrderRepository;
 import com.projetowebservice.spring_course.repositories.UserRepository;
 
@@ -21,10 +23,13 @@ public class TestConfig implements CommandLineRunner{//executa quando o programa
 	
 	//resolver dependencia
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepository uR;
 	
 	@Autowired
 	private OrderRepository oR;
+	
+	@Autowired
+	private CategoryRepository cR;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -38,8 +43,14 @@ public class TestConfig implements CommandLineRunner{//executa quando o programa
 		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT ,secondUser);
 		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.PAID ,firstUser); 
 		
-		userRepository.saveAll(Arrays.asList(firstUser, secondUser));
+		Category cat1 = new Category(null, "Electronics");
+		Category cat2 = new Category(null, "Books");
+		Category cat3 = new Category(null, "Computers");
+		
+		uR.saveAll(Arrays.asList(firstUser, secondUser));
 		oR.saveAll(Arrays.asList(o1,o2,o3));
+		cR.saveAll(Arrays.asList(cat1,cat2,cat3));
+		
 	}
 		
 }
