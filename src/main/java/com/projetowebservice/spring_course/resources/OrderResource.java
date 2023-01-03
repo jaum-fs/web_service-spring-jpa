@@ -13,24 +13,21 @@ import com.projetowebservice.spring_course.entities.Order;
 import com.projetowebservice.spring_course.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/categorys")
+@RequestMapping(value = "/orders")
 public class OrderResource {
 
-	@Autowired
+	@Autowired 
 	private OrderService service;
-
+	
 	@GetMapping
 	public ResponseEntity<List<Order>> findAll() {
-
-		List<Order> orderList = service.findAll();
-		return ResponseEntity.ok().body(orderList);
+		List<Order> list = service.findAll();
+		return ResponseEntity.ok().body(list);
 	}
-
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Order> findById(@PathVariable Long id) {
-		
 		Order obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
-
 }

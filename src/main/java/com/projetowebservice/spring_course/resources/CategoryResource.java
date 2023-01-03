@@ -16,21 +16,18 @@ import com.projetowebservice.spring_course.services.CategoryService;
 @RequestMapping(value = "/categories")
 public class CategoryResource {
 
-	@Autowired
+	@Autowired 
 	private CategoryService service;
-
+	
 	@GetMapping
 	public ResponseEntity<List<Category>> findAll() {
-
-		List<Category> orderList = service.findAll();
-		return ResponseEntity.ok().body(orderList);
+		List<Category> list = service.findAll();
+		return ResponseEntity.ok().body(list);
 	}
-
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id) {
-		
 		Category obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
-
 }
