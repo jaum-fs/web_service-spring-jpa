@@ -3,7 +3,7 @@
 
 O projeto web service com spring boot é uma aplicação back-end realizada na intenção de por em práticas os conhecimentos adquiridos durante as aulas de Java.
 
-Como é uma aplicação back-end os métodos de CRUD podem ser testados no [Postman](postman.com).
+Como é uma aplicação back-end os métodos de CRUD podem ser testados no [Postman](https://www.postman.com/).
 
 
 
@@ -52,4 +52,10 @@ Como é uma aplicação back-end os métodos de CRUD podem ser testados no [Post
 ```http
   PUT /https://springbootwebservice.herokuapp.com/users/{id}
 ```
+
+### Observação
+
+O erro no [link](https://springbootwebservice.herokuapp.com/) da api é normal, visto que não há um projeto front-end pra mesma
+
+porém ser usar /{método} ela funciona corretamente
 
