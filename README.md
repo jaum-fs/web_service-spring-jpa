@@ -57,5 +57,5 @@ Como é uma aplicação back-end os métodos de CRUD podem ser testados no [Post
 
 O erro no [link](https://springbootwebservice.herokuapp.com/) da api é normal, visto que não há um projeto front-end pra mesma
 
-porém ser usar /{método} ela funciona corretamente
+porém se usar /{request} ela funciona corretamente
 
